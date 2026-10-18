@@ -152,6 +152,10 @@
     .project-screenshot::after { content: '⤢ Click to enlarge'; position: absolute; right: 12px; bottom: 12px; font-size: .75rem; font-weight: 600; color: var(--white); background: rgba(15,17,23,.8); border: 1px solid var(--border); padding: 4px 10px; border-radius: 100px; opacity: 0; transform: translateY(6px); transition: all .3s var(--ease); }
     .project-screenshot:hover::after { opacity: 1; transform: none; }
     .project-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .shots { display: grid; grid-template-columns: 1.75fr 1fr; gap: 16px; margin-top: 22px; align-items: start; }
+    .shots figure { margin: 0; }
+    .shots .project-screenshot { margin-top: 0; }
+    .shots figcaption { font-size: .78rem; color: var(--muted); margin-top: 8px; line-height: 1.5; }
     .project-actions .btn { padding: 11px 20px; font-size: .85rem; }
 
     /* FEATURED: chat demo */
@@ -220,6 +224,7 @@
     /* MOBILE */
     @media (max-width: 760px) {
       .demo { grid-template-columns: 1fr; }
+      .shots { grid-template-columns: 1fr; }
       .stats { grid-template-columns: repeat(3, 1fr); }
     }
     @media (max-width: 640px) {
@@ -358,6 +363,17 @@
               <div class="stat"><b>24/7</b><span>answers, EN + Pidgin</span></div>
             </div>
           </div>
+        </div>
+
+        <div class="shots">
+          <figure class="reveal" style="--d:.1s">
+            <div class="project-screenshot"><img src="screenshot-supportbot-n8n.jpg" alt="n8n workflow: support bot webhook, Groq lead scoring, Baserow, Telegram alert, Google Calendar booking and Resend email" loading="lazy" /></div>
+            <figcaption>The live n8n pipeline: webhook → Groq scoring → Baserow + Telegram + Calendar/Resend in parallel</figcaption>
+          </figure>
+          <figure class="reveal" style="--d:.25s">
+            <div class="project-screenshot"><img src="screenshot-supportbot-telegram.png" alt="Telegram alert: hot lead for an after-hours inspection request" loading="lazy" /></div>
+            <figcaption>What the agent gets on Telegram seconds after a customer chats at night</figcaption>
+          </figure>
         </div>
 
         <div class="project-actions">
