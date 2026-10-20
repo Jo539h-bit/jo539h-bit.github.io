@@ -382,6 +382,30 @@
         </div>
       </div>
 
+      <!-- Project: Influencer coupon automation -->
+      <div class="project-card tilt reveal">
+        <div class="badge-row"><span class="badge new">New</span></div>
+        <h3>Influencer Partner Onboarding &amp; Coupon Automation</h3>
+        <p class="project-desc">End-to-end pipeline for a WhatsApp-first retail brand's influencer program — a Google Form signup becomes a live, unique coupon code and two branded emails in under a second, with a persisted 30-minute follow-up and automatic duplicate detection.</p>
+        <div class="stack-row">
+          <span class="tag" style="--i:0">n8n</span>
+          <span class="tag" style="--i:1">Google Forms</span>
+          <span class="tag" style="--i:2">Google Apps Script</span>
+          <span class="tag" style="--i:3">Google Sheets</span>
+          <span class="tag" style="--i:4">Gmail OAuth2</span>
+          <span class="tag" style="--i:5">Webhooks</span>
+        </div>
+        <ul class="project-bullets">
+          <li style="--i:0">Google Form → Apps Script → n8n webhook trigger fires instantly on submission, no polling delay</li>
+          <li style="--i:1">Coupon codes are generated from the influencer's name and checked against the live sheet before issuing, with a numeric fallback on collision — never duplicated</li>
+          <li style="--i:2">Duplicate signups, matched by email or phone, are routed to a separate flagged tab with an owner alert instead of silently reissuing a code</li>
+          <li style="--i:3">30-minute reminder built on n8n's Wait node, verified against the docs to persist to the database rather than memory so it survives a Railway redeploy mid-wait</li>
+          <li style="--i:4">Branded HTML + plain-text emails and a partner-agreement page built entirely from the client's own brand guide and legal terms — nothing invented</li>
+          <li style="--i:5">Debugged two real production failures live: an empty-sheet edge case that silently halted the whole chain, and Google Sheets renaming fields to column headers after an Append step, breaking every downstream email</li>
+        </ul>
+        <div class="project-screenshot"><img src="screenshot-qgh-workflow.svg" alt="Influencer coupon automation pipeline: Google Form, Apps Script, n8n webhook, dedupe and coupon logic, Google Sheets, Gmail welcome email, 30-minute wait, Gmail reminder" loading="lazy" /></div>
+      </div>
+
       <!-- Project 1 -->
       <div class="project-card tilt reveal">
         <h3>Real Estate Lead-to-Close Automation</h3>
